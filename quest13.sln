@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34212.112
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quest13.1", "quest13.1\quest13.1.csproj", "{66F435A4-5073-4172-B7CF-C617225F45B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quest13.2", "quest13.2\quest13.2.csproj", "{B1FE45F2-DA9B-48A9-B548-EA40F60C6501}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quest13.3", "quest13.3\quest13.3.csproj", "{7371967F-B3F7-4E31-A953-7E8F2FF86667}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66F435A4-5073-4172-B7CF-C617225F45B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66F435A4-5073-4172-B7CF-C617225F45B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66F435A4-5073-4172-B7CF-C617225F45B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66F435A4-5073-4172-B7CF-C617225F45B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1FE45F2-DA9B-48A9-B548-EA40F60C6501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1FE45F2-DA9B-48A9-B548-EA40F60C6501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1FE45F2-DA9B-48A9-B548-EA40F60C6501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1FE45F2-DA9B-48A9-B548-EA40F60C6501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7371967F-B3F7-4E31-A953-7E8F2FF86667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7371967F-B3F7-4E31-A953-7E8F2FF86667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7371967F-B3F7-4E31-A953-7E8F2FF86667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7371967F-B3F7-4E31-A953-7E8F2FF86667}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59764F00-93A7-4B94-877C-4E0AE7341730}
+	EndGlobalSection
+EndGlobal
