@@ -36,7 +36,7 @@ namespace quest13._3
             return null;
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
             Player player = new Player();
 
