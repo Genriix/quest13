@@ -6,87 +6,169 @@ using System.Threading.Tasks;
 
 namespace quest13._3
 {
+
+    /// ============================== Настройка основных меню ======================================
+
     interface IPlayable 
     { 
         void Play(); 
-        void Pause(); 
+        void PlayerPause(); 
         void Stop(); 
     }
 
     interface IRecodable 
     { 
         void Record(); 
-        void Pause(); 
+        void RecorderPause(); 
         void Stop(); 
     }
 
+    /// ================================ Настройка всех меню ========================================
+
     class Player : IPlayable, IRecodable
     {
-        public void Play() 
+        public void MainMenu()
         {
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("\n    Проигрывание\n"); 
-        }
-        public void Record() 
-        {
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("\n       Запись\n"); 
-        }
-        public void Pause() 
-        {
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("\n       Пауза\n"); 
-        }
-        public void Stop() 
-        {
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("\n     Остановка\n"); 
-        }
-    }
-
-    class Program
-    {
-        public static string PrintFirstChoise()
-        {
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("\n   Плеер/Диктофон\n");
+            Console.WriteLine("" +
+                "\n   Плеер/Диктофон\n");
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine(
+            Console.WriteLine("" +
                 "Выберите действие:\n" +
-                "1. Проигрывание\n" +
-                "2. Запись\n" +
-                "3. Выход\n" +
-                "0. Resize window\n");
-            return null;
+                "1. Player\n" +
+                "2. Recorder\n" +
+                "3. Exit\n" +
+                "0. Reset window\n");
         }
-        public static string PrintPlayerChoise()
+        public void PlayerMenu()
         {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("" +
+                "\n       Плеер\n");
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("" +
                 "Выберите действие:\n" +
                 "1. Play\n" +
                 "2. Pause\n" +
                 "3. Stop\n");
-            return null;
         }
-        public static string PrintRecorderChoise()
+        public void RecorderMenu()
         {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("" +
+                "\n      Диктофон\n");
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("" +
                 "Выберите действие:\n" +
                 "1. Record\n" +
                 "2. Pause\n" +
                 "3. Stop\n");
-            return null;
         }
-        public static string PrintError()
+        public void Play() 
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("" +
+                "\n    Проигрывание\n");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("" +
+                "Выберите действие:\n" +
+                "1. Play\n" +
+                "2. Pause\n" +
+                "3. Stop\n");
+
+        }
+        public void Record() 
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("" +
+                "\n       Запись\n");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("" +
+                "Выберите действие:\n" +
+                "1. Record\n" +
+                "2. Pause\n" +
+                "3. Stop\n");
+        }
+        public void PlayerPause() 
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("" +
+                "\n       Пауза\n");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("" +
+                "Выберите действие:\n" +
+                "1. Play\n" +
+                "2. Pause\n" +
+                "3. Stop\n");
+
+        }
+        public void RecorderPause()
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("" +
+                "\n       Пауза\n");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("" +
+                "Выберите действие:\n" +
+                "1. Record\n" +
+                "2. Pause\n" +
+                "3. Stop\n");
+        }
+        public void Stop() 
+        {
+            Console.Clear();
+        }
+        public void MainMenuError()
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Ошибка, введите 1, 2 или 3\n");
-            return null;
+            Console.WriteLine("" +
+                "\n" +
+                "      Ошибка\n" +
+                "Введите 1, 2 или 3\n");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("" +
+                "Выберите действие:\n" +
+                "1. Player\n" +
+                "2. Recorder\n" +
+                "3. Exit\n" +
+                "0. Reset Window\n");
         }
-        public static void SetWindow() 
+        public void PlayerError()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("" +
+                "\n" +
+                "      Ошибка\n" +
+                "Введите 1, 2 или 3\n");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("" +
+                "Выберите действие:\n" +
+                "1. Play\n" +
+                "2. Pause\n" +
+                "3. Stop\n");
+        }
+        public void RecorderError()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("" +
+                "\n" +
+                "      Ошибка\n" +
+                "Введите 1, 2 или 3\n");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("" +
+                "Выберите действие:\n" +
+                "1. Record\n" +
+                "2. Pause\n" +
+                "3. Stop\n");
+        }
+        public void SetWindow()
         {
             Console.Clear();
             int height = 10;
@@ -96,66 +178,80 @@ namespace quest13._3
             Console.WindowWidth = width;
             Console.BufferWidth = width;
         }
+        public string CheckEvent()
+        {
+            string choise = Console.ReadKey().KeyChar.ToString();
+            string result = "5";
+            switch(choise)
+            {
+                case "1": result = choise; break; 
+                case "2": result = choise; break; 
+                case "3": result = choise; break;
+                case "0": result = choise; break;
+            }
+            return result;
+        }
+    }
+
+    class Program
+    {
         static void Main()
         {
-            SetWindow();
-
             Player player = new Player();
-            string firstCoise;
-            string secondCoise;
+            player.SetWindow();
 
-            PrintFirstChoise();
-            while (int.Parse(firstCoise = Console.ReadKey().KeyChar.ToString()) != 3)
+            string Choise;
+
+            player.MainMenu();
+            while (int.Parse(Choise = player.CheckEvent()) != 3)
             {
-                
-                switch (firstCoise)
+
+                switch (Choise)
                 {
-                    case "1":  /// Проигрываине
+                    /// ============================  Проигрываине  =================================
+                    
+                    case "1":  
 
-                        Console.Clear();
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("\n       Плеер\n");
-                        PrintPlayerChoise();
+                        player.PlayerMenu();
 
-                        while (int.Parse(secondCoise = Console.ReadKey().KeyChar.ToString()) != 3)
+                        while (int.Parse(Choise = player.CheckEvent()) != 3)
                         {
                             Console.Clear();
-                            switch (secondCoise)
+                            switch (Choise)
                             {
                                 case "1": player.Play();break; // Проигрывание
-                                case "2": player.Pause(); break; // Пауза
-                                default: PrintError(); break;
+                                case "2": player.PlayerPause(); break; // Пауза
+                                default: player.PlayerError(); break;
                             }
-                            PrintPlayerChoise();
                         }
-                        Console.Clear(); break; // Остановка
+                        player.MainMenu(); break; // Остановка
 
-                    case "2":  /// Запись
+                    /// ==============================  Запись  =====================================
+                    
+                    case "2":  
 
-                        Console.Clear();
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("\n      Диктофон\n");
-                        PrintRecorderChoise();
+                        player.RecorderMenu();
 
-                        while (int.Parse(secondCoise = Console.ReadKey().KeyChar.ToString()) != 3)
+                        while (int.Parse(Choise = player.CheckEvent()) != 3)
                         {
                             Console.Clear();
-                            switch (secondCoise)
+                            switch (Choise)
                             {
                                 case "1": player.Record(); break; // Проигрывание
-                                case "2": player.Pause(); break; // Пауза
-                                default: PrintError(); break;
+                                case "2": player.RecorderPause(); break; // Пауза
+                                default: player.RecorderError(); break;
                             }
-                            PrintRecorderChoise();
                         }
-                        Console.Clear(); break; // Остановка
-                    case "0":
-                        {
-                            SetWindow(); break;
-                        }
-                    default: PrintError(); break;
+                        player.MainMenu(); break; // Остановка
+
+                    /// ============================  Rsest window  =================================
+                    
+                    case "0": {  player.SetWindow(); break; }
+
+                    /// ===============================  Ошибка  ====================================
+
+                    default: player.MainMenuError(); break;
                 }
-                PrintFirstChoise();
             }
         }
     }
