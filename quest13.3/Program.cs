@@ -61,17 +61,13 @@ namespace quest13._3
             Console.WriteLine("Ошибка, введите 1, 2 или 3\n");
             return null;
         }
-
-
-
         static void Main()
         {
             Player player = new Player();
-
-            PrintFirstChoise();
-
             string firstCoise;
             string secondCoise;
+
+            PrintFirstChoise();
             while (int.Parse(firstCoise = Console.ReadLine()) != 3)
             {
                 
