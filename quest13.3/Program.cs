@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace quest13._3
@@ -88,6 +89,7 @@ namespace quest13._3
             GetPlayerChoise();
         }
 
+
         /// ================================ Меню диктофона =========================================
         public void GetRecorderChoise()
         {
@@ -151,6 +153,7 @@ namespace quest13._3
                 case "2": result = choise; break; 
                 case "3": result = choise; break;
                 case "4": result = choise; break;
+                case "/": result = "5"; break;
                 case "0": result = choise; break;
             }
             return result;
@@ -180,6 +183,34 @@ namespace quest13._3
             TextError();
             GetRecorderChoise();
         }
+        public void PrintEgg(string color)
+        {
+
+            Console.Clear();
+            switch(color)
+            {
+                case "Red": Console.ForegroundColor = ConsoleColor.Red; break;
+                case "Green": Console.ForegroundColor = ConsoleColor.Green; break;
+                case "Blue": Console.ForegroundColor = ConsoleColor.Blue; break;
+            }
+            Console.WriteLine("" +
+                "\n" +
+                "Поздравляю!!!\n" +
+                "Вы нашли пасхальное яйцо!!!\n" +
+                "\n" +
+                "Разработчик:\n" +
+                "Vladislavv");
+            Thread.Sleep(200);
+        }
+        public void EasterEgg()
+        {
+            while (true) 
+            {
+                PrintEgg("Red");
+                PrintEgg("Green");
+                PrintEgg("Blue");
+            }
+        }
     }
 
     class Program
@@ -192,7 +223,7 @@ namespace quest13._3
 
             string Choise;
 
-            while (int.Parse(Choise = player.CheckEvent()) != 4)
+            while ((Choise = player.CheckEvent()) != "4")
             {
 
                 switch (Choise)
@@ -203,7 +234,7 @@ namespace quest13._3
 
                         player.PlayerMenu();
 
-                        while (int.Parse(Choise = player.CheckEvent()) != 4)
+                        while ((Choise = player.CheckEvent()) != "4")
                         {
                             Console.Clear();
                             switch (Choise)
@@ -223,7 +254,7 @@ namespace quest13._3
 
                         player.RecorderMenu();
 
-                        while (int.Parse(Choise = player.CheckEvent()) != 4)
+                        while ((Choise = player.CheckEvent()) != "4")
                         {
                             Console.Clear();
                             switch (Choise)
@@ -245,6 +276,7 @@ namespace quest13._3
                             player.MainMenu();
                             break; 
                         }
+                    case "5": player.EasterEgg(); break;
 
                     /// ===============================  Ошибка  ====================================
 
