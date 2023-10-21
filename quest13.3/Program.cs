@@ -89,7 +89,6 @@ namespace quest13._3
             GetPlayerChoise();
         }
 
-
         /// ================================ Меню диктофона =========================================
         public void GetRecorderChoise()
         {
@@ -146,14 +145,15 @@ namespace quest13._3
         public string CheckEvent()
         {
             string choise = Console.ReadKey().KeyChar.ToString();
-            string result = "9";
+            string result = "0";
             switch(choise)
             {
                 case "1": result = choise; break; 
                 case "2": result = choise; break; 
                 case "3": result = choise; break;
                 case "4": result = choise; break;
-                case "/": result = "5"; break;
+                case "/": result = "9"; break;
+                case ".": result = "9"; break;
                 case "0": result = choise; break;
             }
             return result;
@@ -185,7 +185,6 @@ namespace quest13._3
         }
         public void PrintEgg(string color)
         {
-
             Console.Clear();
             switch(color)
             {
@@ -225,7 +224,6 @@ namespace quest13._3
 
             while ((Choise = player.CheckEvent()) != "4")
             {
-
                 switch (Choise)
                 {
                     /// ============================  Проигрываине  =================================
@@ -276,11 +274,11 @@ namespace quest13._3
                             player.MainMenu();
                             break; 
                         }
-                    case "5": player.EasterEgg(); break;
+                    case "9": player.EasterEgg(); break;
 
                     /// ===============================  Ошибка  ====================================
 
-                    case "9": player.MainMenuError(); break;
+                    case "0": player.MainMenuError(); break;
                 }
             }
         }
