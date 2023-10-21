@@ -44,7 +44,7 @@ namespace quest13._3
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("" +
-                "\n   Плеер/Диктофон\n");
+                "\n    Главное меню\n");
             GetMainMenuChoise();
         }
         /// ================================= Меню плеера ===========================================
@@ -240,7 +240,6 @@ namespace quest13._3
                                 case "1": player.Play();break; // Проигрывание
                                 case "2": player.PlayerPause(); break; // Пауза
                                 case "3": player.PlayerStop(); break; // Стоп
-                                case "4": break; // Выход
                                 default: player.PlayerError(); break; // Ошибка
                             }
                         }
@@ -260,7 +259,6 @@ namespace quest13._3
                                 case "1": player.Record(); break; // Проигрывание
                                 case "2": player.RecorderPause(); break; // Пауза
                                 case "3": player.RecorderStop(); break; // Стоп
-                                case "4": break; // Выход
                                 default: player.RecorderError(); break; // Ошибка
                             }
                         }
@@ -274,6 +272,9 @@ namespace quest13._3
                             player.MainMenu();
                             break; 
                         }
+
+                    /// =============================  Easter egg  ==================================
+
                     case "9": player.EasterEgg(); break;
 
                     /// ===============================  Ошибка  ====================================
